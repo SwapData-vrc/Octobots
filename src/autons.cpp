@@ -378,18 +378,41 @@ void measure_offsets() {
 void Code() {
   Intake.move(127);
 
-   chassis.pid_swing_set(ez::RIGHT_SWING, 10_deg, SWING_SPEED, 70);
-  chassis.pid_wait();
+  
 
-  chassis.pid_swing_set(ez::LEFT_SWING, 155_deg, SWING_SPEED, 10);
-  chassis.pid_wait();
+
 
    
 
 
-    chassis.pid_odom_set(20_in, DRIVE_SPEED);
+    /*chassis.pid_odom_set(30_in, DRIVE_SPEED);
   chassis.pid_wait();
 
+   chassis.pid_turn_set(135_deg, TURN_SPEED);
+  chassis.pid_wait();
+Processer.move(127);
+
+    chassis.pid_odom_set(70_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  Outtake.move(-127);
+
+  */
+Intake.move(127);
+  chassis.pid_odom_set(16.5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  Processer.move(127);
+
+  
+  chassis.pid_swing_set(ez::LEFT_SWING, 90_deg, SWING_SPEED, 5);
+  chassis.pid_wait();
+
+    chassis.pid_odom_set(18.5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  Outtake.move(127);
+  pros::delay(2000);
     
 
   
