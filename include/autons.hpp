@@ -19,3 +19,5 @@ void measure_offsets();
 
 void Code();
 void CodeR();
+void LGR();
+void LGL();

@@ -447,20 +447,88 @@ Processer.move(127);
 
   */
 Intake.move(127);
-  chassis.pid_odom_set(16.5_in, DRIVE_SPEED);
-  chassis.pid_wait();
 
-  Processer.move(127);
+ chassis.pid_odom_set(16_in, DRIVE_SPEED);
+  chassis.pid_wait();
 
   
-  chassis.pid_swing_set(ez::RIGHT_SWING, 90_deg, SWING_SPEED, 5);
+  chassis.pid_swing_set(ez::LEFT_SWING, 90_deg, SWING_SPEED, 10);
   chassis.pid_wait();
 
-    chassis.pid_odom_set(16.5_in, DRIVE_SPEED);
+  Processer.move(30);
+
+    chassis.pid_odom_set(24_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  Outtake.move(127);
+  
+
+  
+
+  Processer.move(-127);
+
+  chassis.pid_odom_set(-14_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(-45_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+   chassis.pid_odom_set(15.9_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  Intake.move(-127);
   pros::delay(2000);
+  Intake.move(0);
+  Processer.move(0);
+
+  chassis.pid_odom_set(-17_in, DRIVE_SPEED);
+  chassis.pid_wait();
+  chassis.pid_turn_set(45_deg, TURN_SPEED);
+
+  chassis.pid_wait();
+
+  chassis.pid_odom_set(16_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  Intake.move(127);
+  pros::delay(1000);
+
+  chassis.pid_odom_set(-43_in, DRIVE_SPEED);
+  chassis.pid_wait();
+  
+  chassis.pid_turn_set(90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  
+
+  chassis.pid_odom_set(45.5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+
+
+  chassis.pid_turn_set(0_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  
+  
+  
+Processer.move(127);
+
+ Outtake.move(127);
+  chassis.pid_odom_set(9_in, DRIVE_SPEED);
+  chassis.pid_wait();
+ 
+  pros::delay(2000);
+
+    chassis.pid_odom_set(0.5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+
+  
+
+
+  
+
+
     
 
   
@@ -469,3 +537,175 @@ Intake.move(127);
 
   
 }
+
+void LGR() {
+
+  Intake.move(127);
+
+ chassis.pid_odom_set(16_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  
+  chassis.pid_swing_set(ez::LEFT_SWING, 90_deg, SWING_SPEED, 10);
+  chassis.pid_wait();
+
+  Processer.move(30);
+
+    chassis.pid_odom_set(24_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  
+
+  
+
+  Processer.move(-127);
+
+  chassis.pid_odom_set(-14_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  
+
+  chassis.pid_odom_set(-1.1_in, DRIVE_SPEED);
+  chassis.pid_wait();
+  chassis.pid_turn_set(45_deg, TURN_SPEED);
+
+  chassis.pid_wait();
+
+  
+
+  Intake.move(127);
+  pros::delay(1000);
+
+  chassis.pid_odom_set(-27_in, DRIVE_SPEED);
+  chassis.pid_wait();
+  
+  chassis.pid_turn_set(90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  
+
+  chassis.pid_odom_set(40.5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+
+
+  chassis.pid_turn_set(0_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  
+  
+  
+Processer.move(127);
+
+ Outtake.move(127);
+  chassis.pid_odom_set(10.3_in, DRIVE_SPEED);
+  chassis.pid_wait();
+ 
+  pros::delay(10000);
+
+    chassis.pid_odom_set(0.5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+
+  
+
+
+  
+
+
+    
+
+  
+  
+  //110
+
+  
+ }
+
+ void LGL() {
+
+  Intake.move(127);
+
+ chassis.pid_odom_set(16_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  
+  chassis.pid_swing_set(ez::RIGHT_SWING, -90_deg, SWING_SPEED, 10);
+  chassis.pid_wait();
+
+  Processer.move(30);
+
+    chassis.pid_odom_set(24_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  
+
+  
+
+  Processer.move(-127);
+
+  chassis.pid_odom_set(-14_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  
+
+  chassis.pid_odom_set(-1.1_in, DRIVE_SPEED);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-45_deg, TURN_SPEED);
+
+  chassis.pid_wait();
+
+  
+
+  Intake.move(127);
+  pros::delay(1000);
+
+  chassis.pid_odom_set(-27_in, DRIVE_SPEED);
+  chassis.pid_wait();
+  
+  chassis.pid_turn_set(-90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  
+
+  chassis.pid_odom_set(41.5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+
+
+  chassis.pid_turn_set(0_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  
+  
+  
+Processer.move(127);
+
+ Outtake.move(127);
+  chassis.pid_odom_set(5.3_in, DRIVE_SPEED);
+  chassis.pid_wait();
+ 
+  pros::delay(10000);
+
+    chassis.pid_odom_set(0.5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+
+  
+
+
+  
+
+
+    
+
+  
+  
+  //110
+
+  
+ }
+
+ 
+
+ 
