@@ -21,3 +21,5 @@ void Code();
 void CodeR();
 void LGR();
 void LGL();
+
+void AUTON();

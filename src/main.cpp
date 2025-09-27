@@ -31,6 +31,8 @@ ez::Drive chassis(
  */
 void initialize() {
   // Print our branding over your terminal :D
+
+    
   ez::ez_template_print();
 
   pros::delay(500);  // Stop the user from doing anything while legacy ports configure
@@ -58,6 +60,7 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
+    {"AUTON", AUTON},
     {"Long Goal Left", LGL},
     {"Long Goal right", LGR},
     {"AutonR", CodeR},
@@ -265,7 +268,7 @@ void opcontrol() {
     // . . .
 
     if(master.get_digital(DIGITAL_L1)) {
-          Intake.move(127);
+          Intake.move();
           Processer.move(127);
 
         }
@@ -314,6 +317,8 @@ else if (master.get_digital_new_press(DIGITAL_DOWN)) {
 else {IntakePiston.set_value(YPosition);}
 
 }
+
+
 
 
 

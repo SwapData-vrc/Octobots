@@ -15,9 +15,9 @@
 ///
 void default_constants() {
   // P, I, D, and Start I
-  chassis.pid_drive_constants_set(20.0, 0.0, 100.0);         // Fwd/rev constants, used for odom and non odom motions
+  chassis.pid_drive_constants_set(20.0, -5.0, 100.0);         // Fwd/rev constants, used for odom and non odom motions
   chassis.pid_heading_constants_set(11.0, 0.0, 20.0);        // Holds the robot straight while going forward without odom
-  chassis.pid_turn_constants_set(3.0, 0.05, 20.0, 15.0);     // Turn in place constants
+  chassis.pid_turn_constants_set(3.0, -1.0, 20.0, 15.0);     // Turn in place constants
   chassis.pid_swing_constants_set(6.0, 0.0, 65.0);           // Swing constants
   chassis.pid_odom_angular_constants_set(6.5, 0.0, 52.5);    // Angular control for odom motions
   chassis.pid_odom_boomerang_constants_set(5.8, 0.0, 32.5);  // Angular control for boomerang motions
@@ -464,7 +464,7 @@ Intake.move(127);
 
   
 
-  Processer.move(-127);
+  Processer.move(1127);
 
   chassis.pid_odom_set(-14_in, DRIVE_SPEED);
   chassis.pid_wait();
@@ -704,6 +704,64 @@ Processer.move(127);
   //110
 
   
+ }
+
+ void AUTON() {
+
+Intake.move(127);  //Starts Intake at Max Speed
+
+ chassis.pid_odom_set(13_in, DRIVE_SPEED);
+  chassis.pid_wait();  // Drives Forward 13 Inches
+
+  
+  chassis.pid_swing_set(ez::LEFT_SWING, 90_deg, SWING_SPEED, 10);//Sweeps robot into 3 block clump
+  chassis.pid_wait();  
+
+  
+
+    chassis.pid_odom_set(24_in, DRIVE_SPEED);  //Makes sure all blocks are in the intake
+  chassis.pid_wait();
+
+  
+
+  
+
+  Processer.move(1); // Slowly starts the processer to avoid jamming
+
+  chassis.pid_odom_set(-25_in, DRIVE_SPEED);
+  chassis.pid_wait(); // reverses drivetrain
+
+  chassis.pid_odom_set(12_in, DRIVE_SPEED); //Starts making way to match loader
+
+  chassis.pid_wait();
+ chassis.pid_swing_set(ez::LEFT_SWING, 135_deg, SWING_SPEED, 0);  //Sweeps to matchloader
+
+   chassis.pid_odom_set(35_in, DRIVE_SPEED);
+  chassis.pid_wait();
+  Processer.move(1);
+
+  chassis.pid_swing_set(ez::LEFT_SWING, 179_deg, SWING_SPEED, 5); //Aligns robot with matchloader
+  chassis.pid_wait();
+  chassis.pid_odom_set(-15_in, DRIVE_SPEED); //Moves into correc Little Will deployment location
+  chassis.pid_wait();
+  IntakePiston.set_value(true); //Deploys Little Will
+  chassis.pid_odom_set(30_in, DRIVE_SPEED); //Drives forward to matchloader
+  chassis.pid_wait();
+
+  pros::delay(2000); // Sets time for matchloader to load
+
+
+
+
+     
+
+    
+
+
+
+    
+  
+ 
  }
 
  
